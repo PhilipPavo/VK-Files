@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+    <Button
+        android:id="@+id/file_delete"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Удалить"
+        android:drawableLeft="@drawable/abc_ic_menu_share_mtrl_alpha"
+        android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/file_download"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Удалить"
+        android:drawableLeft="@drawable/ic_menu_docs_saved"
+        android:textSize="24sp"/>
+    <Button
+        android:id="@+id/okbutton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Okay" />
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightColor">#A5D6A7</color>
+    <color name="primaryColor">#4CAF50</color>
+    <color name="primaryColorDark">#2E7D32</color>
+    <color name="accentColor">#1B5E20</color>
+    <color name="menu_item_bg">#EEE</color>
+    <color name="menu_item_bg_selected">#CECECE</color>
+    <color name="navigationDrawerBackground">#EEE</color>
+</resources>

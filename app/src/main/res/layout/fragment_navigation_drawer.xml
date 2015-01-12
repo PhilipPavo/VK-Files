@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pavophilip.android.vk_files.NavigationDrawerFragment"
+    android:background="@color/navigationDrawerBackground">
+    <RelativeLayout
+        android:id="@+id/containerDrawerImage"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#4CAF50">
+
+        <com.pavophilip.android.vk_files.CircularImageView
+            android:id="@+id/user_avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_below="@+id/user_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="Undefined"
+            android:textSize="14sp"
+            android:textColor="#FFF" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/drawerList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/containerDrawerImage">
+
+    </ListView>
+
+</RelativeLayout>
