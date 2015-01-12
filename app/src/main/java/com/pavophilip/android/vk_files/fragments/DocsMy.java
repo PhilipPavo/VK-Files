@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.support.v7.internal.widget.AppCompatPopupWindow;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -17,6 +20,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -123,12 +128,32 @@ public class DocsMy extends Fragment implements AdapterView.OnItemClickListener 
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        View v = inflater.inflate(R.layout.dialog_file_my, null);
+        TextView t = (TextView) v.findViewById(R.id.file_title);
+        ((Button) v.findViewById(R.id.btn_delete))
+                .setCompoundDrawablesWithIntrinsicBounds(
+                        Utils.getIcon(
+                                getResources().getDrawable(R.drawable.ic_file_delete),
+                                getResources().getColor(R.color.materialRed)
+                        ), null, null, null);
+        ((Button) v.findViewById(R.id.btn_download))
+                .setCompoundDrawablesWithIntrinsicBounds(
+                        Utils.getIcon(
+                                getResources().getDrawable(R.drawable.ic_menu_docs_saved),
+                                getResources().getColor(R.color.materialIndigo)
+                        ), null, null, null);
+        ((Button) v.findViewById(R.id.btn_share))
+                .setCompoundDrawablesWithIntrinsicBounds(
+                        Utils.getIcon(
+                                getResources().getDrawable(R.drawable.abc_ic_menu_share_mtrl_alpha),
+                                getResources().getColor(R.color.materialYellow)
+                        ), null, null, null);
+        t.setText(files.get(position).title);
         CustomDialog dialog = new CustomDialog(context)
-                .setCustomTitle("Документ")
-                .setText(files.get(position).title)
-                .setCancelButton("Отмена")
-                .setCustomContent(inflater.inflate(R.layout.dialog_file_my, null));
+                //.setCustomTitle("Документ")
+                //.setText(files.get(position).title)
+                //.setCancelButton("Отмена")
+                .setCustomContent(v, CustomDialog.SIZE_MEDIUM);
         dialog.show();
-        //dialog.setTitle("Title...");
     }
 }

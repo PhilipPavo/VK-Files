@@ -12,6 +12,9 @@ import android.widget.TextView;
  * Created by Philip on 11.01.2015.
  */
 public class CustomDialog  extends Dialog{
+    public static int SIZE_BIG = 300;
+    public static int SIZE_MEDIUM = 200;
+    public static int SIZE_SMALL = 100;
     public CustomDialog(Context context) {
         super(context);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -23,9 +26,10 @@ public class CustomDialog  extends Dialog{
         title.setText(s);
         return this;
     }
-    public CustomDialog setCustomContent(View v){
+    public CustomDialog setCustomContent(View v, int size){
         ViewGroup container = (ViewGroup) findViewById(R.id.dialog_content);
         container.addView(v);
+        container.getLayoutParams().width = SIZE_MEDIUM;
         return this;
     }
     public CustomDialog setCustomTitle(String s) {

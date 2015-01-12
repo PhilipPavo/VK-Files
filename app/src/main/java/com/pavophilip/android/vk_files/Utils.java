@@ -1,7 +1,11 @@
 package com.pavophilip.android.vk_files;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +33,15 @@ public class Utils {
         int exp = (int) (Math.log(bytes) / Math.log(unit));
         String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp-1) + (si ? "" : "i");
         return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+    }
+    public static Drawable getIcon(Drawable drawable, String color){
+        //Drawable drawable = res.getDrawable(id);
+        drawable.setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_ATOP);
+        return drawable;
+    }
+    public static Drawable getIcon(Drawable drawable, int color){
+        drawable.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+        return drawable;
     }
     public static Bitmap getBitmapFromURL(String src) {
         try {

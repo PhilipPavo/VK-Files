@@ -11,8 +11,7 @@
         android:id="@+id/dialog_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/dialog_title"
@@ -22,14 +21,17 @@
             android:visibility="gone"
             android:textColor="#CC000000"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:padding="24dp"/>
 
         <TextView
             android:id="@+id/dialog_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#CC000000"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:paddingRight="24dp"
+            android:paddingLeft="24dp"/>
     </LinearLayout>
 
     <LinearLayout
